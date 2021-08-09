@@ -1,0 +1,16 @@
+a {
+color:rgb(123, 123, 194);
+font-weight: bold;
+}
+
+.main-button {
+    font-size: 80px;
+    border-radius: 50%
+}
+
+.main-button :hover{
+    transform: scale(1.1);
+    transition: ease-in;
+    transition-duration: 100ms;
+}
+

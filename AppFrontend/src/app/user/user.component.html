@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="card text-dark bg-light mt-3" >
+        
+        <div class="card-header">{{user.email}}</div>
+        <div class="card-body">
+          <h5  class="card-title">{{user.firstName+" "+user.lastName}}</h5>
+            <p class="card-text">
+              <i class="fas fa-phone-square-alt"></i>{{" "+user.phone}}            
+            </p>
+        </div>
+
+       <form [formGroup]="userForm">
+            <div class="col-6 m-2">
+                <input type="text"class="form-control" formControlName="firstName" placeholder="Change your firstname" required >
+            </div>
+            <div class="col-6 m-2">
+                <input type="text"class="form-control"  formControlName="lastName" placeholder="Change your lastname" >
+            </div>
+            <div class="col-6 m-2">
+                <input type="text"class="form-control"  formControlName="email" placeholder="Change your email"  >
+            </div>
+            <div class="col-6 m-2">
+                <input type="text"class="form-control"   formControlName="phone" placeholder="Change your phone" >
+            </div>
+            <div class="col-12 m-3">
+              
+                  
+                  <button type="submit"  class="btn btn-primary   " (click)="onEdit()" [disabled]="userForm.status == 'INVALID'">Save changes</button> 
+                  
+                  <button class="btn btn-danger mx-4" (click)="onDelete()">Delete</button>
+                
+                  
+            </div>
+           
+        </form>
+        
+        
+
+
+
+  </div>
+
+</div>
+

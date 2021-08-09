@@ -1,0 +1,6 @@
+Crear una base de datos en MongoDb con los nombres:
+Base de datos : “TestDB”
+Colección = “Users”,
+Cargar ahí el archivo suministrado “MOCK_DATA”, este contiene una lista de 100 usuarios.
+En el backend, en “app.js” agregar el usuario ("username") y la contraseña ("pwd") 
+

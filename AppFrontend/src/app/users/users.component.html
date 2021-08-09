@@ -1,0 +1,52 @@
+<!-- <p>{{users|json}}</p> -->
+
+<div class="container">
+
+    <!-- <div class="row m-3 mb-5">
+        <div class="col-4"><input type="text"class="form-control" #author placeholder="Sreach by author"></div>
+        <div class="col-4"><input type="text"class="form-control" #tag  placeholder="Sreach by tag"></div>
+        <div class="col-4"><button  class="btn btn-primary" (click)="onSreach(author.value,tag.value)"> Sreach </button></div>
+        <div *ngIf="tag.value" class="mt-3"><h5>Tag : {{tag.value}}</h5></div>
+        <div *ngIf="author.value" class="mt-3"><h5>Author : {{author.value}}</h5></div>
+
+    </div> -->
+    <div class="row"> 
+      <div class="col text-center">
+        <button class="btn btn-success main-button py-3 px-4 m-3 " routerLink="/add-user"><i class="fas fa-users  "></i></button>
+        <h4>Create user</h4>
+      </div>
+    </div>
+
+    <div class="row m-3 mb-5">
+        <div class="col-6 my-2"><input type="text"class="form-control"  (keyup.enter)="onSearch()" [formControl]="firstName" placeholder="Search by firstname"></div>
+        <div class="col-6 my-2"><input type="text"class="form-control"  (keyup.enter)="onSearch()" [formControl]="lastName" placeholder="Search by lastname"></div>
+        <div class="col-6 my-2"><input type="text"class="form-control"  (keyup.enter)="onSearch()" [formControl]="email" placeholder="Search by email"></div>
+        <div class="col-6 my-2"><input type="text"class="form-control"  (keyup.enter)="onSearch()" [formControl]="phone" placeholder="Search by phone"></div>
+        <div class="col-12 my-2"><button  class="btn btn-primary" (click)="onSearch()" > Search </button></div>
+    </div>
+    
+<div class="row">
+  <div *ngFor="let user of users" class="col-4"> 
+    <div class="card text-dark bg-light mb-3" >
+        <div class="card-header">{{user.email}}</div>
+        <div class="card-body">
+          <h5  class="card-title">{{user.firstName+" "+user.lastName}}</h5>
+            <p class="card-text">
+              <i class="fas fa-phone-square-alt"></i>{{" "+user.phone}}            
+            </p>
+            <a [routerLink]="['/user' , user['_id']]">Edit</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- <h3>{{user.firstName+" "+}}</h3> -->
+    
+    <!-- <pre>tags: {{article | json }}</pre> -->
+    
+
+    <!-- {{user.firstName+" "+user.lastName}} -->
+
+</div>
+

@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="navbar navbar-dark bg-dark col-11">
+            <h3 class="navbar-brand pt-3 pl-5 mb-2 mx-3">
+                <span class="h5 font-weight-light">
+    
+                    <a routerLink="/" >Users Aplication </a>
+                    <br>
+                    <a *ngIf="isLogged()" routerLink="/change-password" >{{getUser()}} </a>
+                    
+                    
+                </span>
+             </h3>
+        </div>
+
+        <div class="navbar navbar-dark bg-dark col-1">
+            <h3 class="navbar-brand pt-3 pl-5 mb-2 mx-3">
+                <span class="h5 font-weight-light">
+    
+                    
+                    <a *ngIf="!isLogged()" routerLink="/login">Login</a>
+                    <a *ngIf="isLogged()" (click)="onLogout()" routerLink="/" >Logout</a>
+                </span>
+             </h3>
+             
+        </div>
+        
+
+
+
+
+    </div>
+</div>

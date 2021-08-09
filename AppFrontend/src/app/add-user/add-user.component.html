@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="card text-dark bg-light mt-3" >
+
+    <div class="card-header">Add a new user</div>
+    <div class="card-body">
+        <h5  class="card-title">Complete the form</h5>
+            <form [formGroup]="userForm" class="card-body">
+                <div class="col-6 m-2">
+                    <label for="firstName"><h5>First Name:</h5></label>
+                    <input type="text" class="form-control mb-3 mx-3" name="firstName" formControlName="firstName" placeholder="Add your firstname" required >
+                </div>
+                <div class="col-6 m-2">
+                    <label for="lastName"><h5>Last Name:</h5></label>
+                    <input type="text"class="form-control  mb-3 mx-3" name="lastName" formControlName="lastName" placeholder="Add your lastname" >
+                </div>
+                <div class="col-6 m-2">
+                    <label for="email"><h5>Email:</h5></label>
+                    <input type="email"class="form-control  mb-3 mx-3" name="email" formControlName="email" placeholder="Add your email"  >
+                </div>
+                <div class="col-6 m-2">
+                    <label for="phone"><h5>Phone number:</h5></label>
+                    <input type="text"class="form-control  mb-3 mx-3"  name="phone" formControlName="phone" placeholder="Add your phone" >
+                </div>
+                <div class="col-6 m-2">
+                    <label for="password"><h5>Password:</h5></label>
+                    <input [type]="hidePasswordFlag ? 'password' : 'text' "  class="form-control  mb-3 mx-3"  name="password" formControlName="password" placeholder="Add your password"  >
+                    
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary mb-3 mx-3" (click)="toggleHidePassword()">
+                        <i class="fas fa-eye" *ngIf=hidePasswordFlag></i>  
+                        <i class="fas fa-eye-slash" *ngIf=!hidePasswordFlag></i>  
+
+                    </button>
+                </div>
+                <div class="col-12 m-3"><button type="submit"  class="btn btn-primary" (click)="onSubmit()" [disabled]="userForm.status == 'INVALID'"  > Save </button></div>
+                
+                    <h3 *ngIf="greetingsFlag" class="h3">Added successfully, Thanks!</h3>
+                   
+            </form>
+        
+    </div>    
+
+
+    </div>
+
+</div>
+
