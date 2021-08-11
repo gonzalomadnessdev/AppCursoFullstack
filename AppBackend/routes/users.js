@@ -175,6 +175,7 @@ router.post('/', async (req, res) => {
   
   
   body.password = passwordHash.generate(body.password) ;
+  body.isActive = false;
 
   try {
       const user = new User(body)

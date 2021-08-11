@@ -8,8 +8,8 @@ var cors = require('cors');
 
 //AGREGAR USUARIO Y CONTRASEÑA PARA BASE DE DATOS DE MONGODB
 
-const username = ''
-const pwd = '';
+const username = 'gonzalomadness'
+const pwd = 'Bl4ckS4bb4th';
 const dbname = 'TestDB';
 
 var uri = `mongodb+srv://${username}:${pwd}@cluster0.zcriz.mongodb.net/${dbname}?retryWrites=true&w=majority`;
